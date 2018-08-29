@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+  <style>
+  #app div {
+    width: 100px;
+    height: 100px;
+    background: black;
+  }
+  .my-startup-enter-active,
+  .my-startup-leave-active {
+    transition: all 1s ease;
+  }
+  .my-startup-enter,
+  .my-startup-leave-to {
+    opacity: 0;
+  }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <button @click="show=!show">jungle</button>
+  <transition name="my-startup"
+              @beforeEnter="beforeEnter"
+              @enter="enter"
+              @afterEnter="afterEnter"
+              @enterCancelled="enterCancelled"
+              @beforeLeave="beforeLeave"
+              @leave="leave"
+              @afterLeave="afterLeave"
+              @leaveCancelled="leaveCancelled"
+  >
+    <div v-if="show">cat</div>
+  </transition>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      show: false
+    },
+    methods: {
+      beforeEnter: function(el) {
+        console.log("beforeEnter", el.className);
+      },
+      enter: function(el) {
+        console.log("enter", el.className);
+      },
+      afterEnter: function(el) {
+        console.log("afterEnter", el.className);
+      },
+      enterCancelled: function(el) {
+        console.log("enterCancelled", el.className);
+      },
+      beforeLeave: function(el) {
+        console.log("beforeLeave", el.className);
+      },
+      leave: function(el) {
+        console.log("leave", el.className);
+      },
+      afterLeave: function(el) {
+        console.log("afterLeave", el.className);
+      },
+      leaveCancelled: function(el) {
+        console.log("leaveCancelled", el.className);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

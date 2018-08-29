@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<my-component id="app" title="myTitle" content="myContent"></my-component>
+
+<script>
+  var myComponent = Vue.component('my-component', {
+    props: ['title', 'content'],
+    data: function () {
+      return {
+        desc: '123'
+      }
+    },
+    template: '<div>' +
+    '<h1>{{title}}</h1>' +
+    '<p>{{content}}</p>' +
+    '<p>{{desc}}</p>' +
+    '</div>'
+  });
+  var vm = new Vue({
+    el: '#app'
+  });
+</script>
+
+</body>
+</html>

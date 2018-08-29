@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <template v-if="yes">
+    <p>There is first dom</p>
+    <p>There is second dom</p>
+    <p>There is third dom</p>
+  </template>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      yes: true
+    }
+  });
+</script>
+
+</body>
+</html>

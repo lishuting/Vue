@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <div v-if="isExit" v-my-directive="param"></div>
+</div>
+
+<script>
+  Vue.directive('my-directive', {
+    bind: function() {
+      console.log('bind', arguments);
+    },
+    update: function(newValue, oldValue) {
+      console.log('update', newValue, oldValue);
+    },
+    unbind: function() {
+      console.log('unbind', arguments);
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      param: 'first',
+      isExit: true
+    }
+  })
+</script>
+
+</body>
+</html>

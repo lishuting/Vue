@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <div v-my-msg:console.log="content"></div>
+</div>
+
+<script>
+  Vue.directive('my-msg', {
+    bind: function() {
+      // console.log('~~~bind~~~');
+      // console.log('el', this.el);
+      // console.log('name', this.name);
+      // console.log('vm', this.vm);
+      // console.log('expression', this.expression);
+      // console.log('arg', this.arg);
+      // console.log('modifiers', this.modifiers);
+      // console.log('descriptor', this.descriptor);
+    },
+    update: function(newValue, oldValue) {
+      var key = Object.keys(this.modifiers);
+      window[this.arg][keys[0]](newValue);
+    },
+    unbind: function() {
+
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      content: 'there is the content'
+    }
+  });
+</script>
+
+</body>
+</html>

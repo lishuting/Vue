@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <a :href="url">链接</a>
+  <img :src="imgUrl">
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      url: 'https://www.github.com',
+      imgUrl: 'http://xxx.xxx.xx/img.png'
+    }
+  })
+</script>
+
+</body>
+</html>

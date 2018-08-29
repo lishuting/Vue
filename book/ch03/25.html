@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <div v-my-deep-directive="obj"></div>
+  <div v-my-nodeep-directive="obj"></div>
+</div>
+
+<script>
+  Vue.directive('my-deep-directive', {
+    deep: true,
+    update: function(newValue, oldValue) {
+      console.log('deep', newValue.a.b);
+    }
+  });
+
+  Vue.directive('my-nodeep-directive', {
+    update: function(newValue, oldValue) {
+      console.log('deep', newValue.a.b);
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      obj: {
+        a: {
+          b: 'inner'
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

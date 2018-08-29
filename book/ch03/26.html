@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.min.js"></script>
+</head>
+<body>
+
+<input id="app" type="text" v-my-twoway-directive="param">
+
+<script>
+  Vue.directive('my-twoway-directive', {
+    twoWay: true,
+    bind: function () {
+      this.handler = function () {
+        console.log('value changed: ', this.el.value);
+        this.set(this.el.value)
+      }.bind(this);
+      this.el.addEventListener('input', this.handler)
+    },
+    unbind: function () {
+      this.el.removeEventListener('input', this.handler)
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      param: 'first'
+    }
+  })
+</script>
+
+</body>
+</html>

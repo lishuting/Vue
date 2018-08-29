@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <input type="text" v-model="price | cents">
+</div>
+
+<script>
+  Vue.filter('cents', {
+    read: function(value) {
+      return (value / 100).toFixed(2);
+    },
+    write: function(value) {
+      return value * 100;
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      price: 150
+    }
+  });
+</script>
+
+</body>
+</html>

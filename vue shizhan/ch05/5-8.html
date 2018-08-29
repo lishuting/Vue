@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <template v-for="book in books">
+      <li>书名： {{book.name}}</li>
+      <li>作者： {{book.author}}</li>
+    </template>
+  </ul>
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      books: [
+        {
+          name: '《Vue.js 实战》',
+          author: '梁灏'
+        },
+        {
+          name: '《Javascript 语言精粹》',
+          author: 'Douglas Crockford'
+        },
+        {
+          name: '《Javascript 高级程序设计》',
+          author: 'Nicholas C.Zakas'
+        }
+      ]
+    }
+  })
+</script>
+
+</body>
+</html>

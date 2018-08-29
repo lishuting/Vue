@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+  var myData = {
+    a: 1
+  };
+  var app = new Vue({
+    el: '#app',
+    data: myData
+  });
+
+  console.log(app.a);
+
+  app.a = 2;
+  console.log(app.a);
+
+  myData.a = 3;
+  console.log(app.a);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<ul id="app">
+  <li v-for="(key, value) in objectDemo">
+    {{key}} - {{$key}} : {{value}}
+  </li>
+
+  <li v-for="n in 5">
+    {{n}}
+  </li>
+</ul>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      objectDemo: {
+        a: 'a-value',
+        b: 'b-value',
+        c: 'c-value',
+      },
+      n: null
+    }
+  });
+</script>
+
+</body>
+</html>

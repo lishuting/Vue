@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      cents: 100
+    },
+    computed: {
+      price: {
+        set: function (newValue) {
+          this.cents = newValue * 100;
+        },
+        get: function () {
+          return (this.cents / 100).toFixed(2);
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

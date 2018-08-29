@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<button id="app" v-on:click="alert">alert</button>
+
+<!--
+<script>
+  new Vue({
+    el: '#app',
+    data: {a: 1},
+    methods: {
+      alert: function () {
+        alert(this.a);
+      }
+    }
+  });
+</script>
+-->
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: data,
+    events: {
+      'event.alert': function () {
+        alert('this is event alert: ' + this.a);
+      }
+    }
+  });
+
+  vm.$emit('event.alert');
+</script>
+
+</body>
+</html>

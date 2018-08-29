@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <button v-on:click="showEvent">Event</button>
+  <button v-on:click="showEvent($event)">showEvent</button>
+  <button v-on:click="showEvent()">showEvent</button>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    methods: {
+      showEvent: function(event) {
+        console.log(event);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

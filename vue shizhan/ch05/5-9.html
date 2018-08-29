@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <span v-for="value in users">{{value}}</span>
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      user: {
+        name: 'Aresn'
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

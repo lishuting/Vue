@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app" v-my-advance-directive a="paramA"></div>
+
+<script>
+  Vue.directive('my-advance-directive', {
+    param: ['a'],
+    bind: function() {
+      console.log('param', this.params);
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app'
+  });
+</script>
+
+</body>
+</html>

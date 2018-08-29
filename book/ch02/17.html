@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <!-- <button v-on:click="say">Say</button> -->
+
+  <button v-on:click="sayFrom('from param')">Say</button>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      msg: 'Hello Vue.js'
+    },
+    methods: {
+      say: function() {
+        alert(this.msg);
+      },
+      sayFrom: function(from) {
+        alert(this.msg + ' ' + from);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

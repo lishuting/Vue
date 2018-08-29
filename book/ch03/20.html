@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <p v-text="msg"></p>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      msg: 'There is a message'
+    }
+  });
+</script>
+
+</body>
+</html>

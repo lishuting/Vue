@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue-dev/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <input type="text" v-model="price">
+  <span>{{ date | dynamic price }}</span>
+</div>
+
+<script>
+  Vue.filter('dynamic', function(date, price) {
+    return date.toLocalDateString() + ':' + price;
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      date: new Date(),
+      price: 150
+    }
+  });
+</script>
+
+</body>
+</html>
